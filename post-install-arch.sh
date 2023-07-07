@@ -1,10 +1,12 @@
 #!/bin/bash
 
-sudo pacman -S nano git terminator tig vlc
+sudo pacman -S nano git terminator vlc vi
 # color, paralell, ILoveCandy
 
-sudo pacman -S network-manager-applet alsa-utils vi
+sudo pacman -S network-manager-applet alsa-utils telegram-desktop 
 #sudo systemctl enable NetworkManager.service
+
+sudo pacman -S foliate calibre # visor epub 
 
 lscpu | grep '^CPU(s):'
 sudo nano /etc/makepkg.conf # cpu + 1
@@ -28,7 +30,8 @@ sudo usermod -aG docker $USER
 sudo systemctl start docker.service
 sudo systemctl enable docker.service
 
-sudo pacman -S ranger transmission-gtk htop bat exa ripgrep
+sudo pacman -S transmission-gtk htop bat exa ripgrep  
+sudo pacman -S ranger cmus tig yt-dlp neovim scrot
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
