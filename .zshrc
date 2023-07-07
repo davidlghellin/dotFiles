@@ -74,8 +74,8 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-alias youtube="yt-dlp -x -f bestaudio "
-
+alias youtube="yt-dlp -x --audio-format mp3 --audio-quality 0" 
+alias cat="bat -pp "
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
