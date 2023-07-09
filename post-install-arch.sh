@@ -11,7 +11,7 @@ sudo pacman -S foliate calibre # visor epub
 lscpu | grep '^CPU(s):'
 sudo nano /etc/makepkg.conf # cpu + 1
 
-sudo pacman -S firefox-i18n-es-es
+sudo pacman -S firefox-i18n-es-es meld
 sudo pacman -S zsh zsh-completions zsh-autosuggestions zsh-syntax-highlighting
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 #chsh -s /bin/zsh
@@ -30,7 +30,8 @@ sudo usermod -aG docker $USER
 sudo systemctl start docker.service
 sudo systemctl enable docker.service
 
-sudo pacman -S transmission-gtk htop bat exa ripgrep  
+sudo pacman -S transmission-gtk htop bat exa ripgrep notify-osd
+sudo pacman -S xorg-xrandr arandr # para posición del monitor
 sudo pacman -S ranger cmus tig yt-dlp neovim scrot
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf

@@ -1,5 +1,6 @@
 local menubar = require("menubar")
 
+local xrandr = require("xrandr")
 -- Configuración de la barra de menú
 menubar.utils.terminal = "alacritty" -- Configurar el terminal para aplicaciones que lo requieran
 
@@ -66,6 +67,13 @@ end, {    description = "restore minimized",    group = "client"}),
     awful.key({ 0,    }, "XF86AudioRaiseVolume",  function () awful.util.spawn(volumeup)   end),
     awful.key({ 0,    }, "XF86AudioLowerVolume",  function () awful.util.spawn(volumedown) end),
     awful.key({ 0,    }, "XF86AudioMute",         function () awful.util.spawn(volumemute) end),
+
+    awful.key({modkey, "Shift"}, "j", function() xrandr.xrandr() end),
+
+    awful.key({ modkey  ,         }, "#107", function () awful.spawn.with_shell(screenshot_cmd) end,
+          {description = "take screenshot", group = "launcher"}),
+awful.key({ modkey  , "Shift" }, "p", function () awful.spawn(screenshot_cmd) end,
+          {description = "take screenshot", group = "launcher"}),
 -- Menubar
     awful.key({modkey}, "p", function()     menubar.show() end, {    description = "show the menubar",    group = "launcher"})
 )

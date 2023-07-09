@@ -26,7 +26,8 @@ require("bar")
 -- importar para cargar lo comandos de tecla global
 require("keys")
 -- NOTA COLOCAR LA RUTA DEL LA IMAGEN /home/{usario}/.config/awesome/wallpaper/Ruka Sarashina.jpg"
-url_wallpaper = "/home/wizord/My-setting-awesome-wm/configuracionAWM/wallpaper/Ruka Sarashina.jpg"
+-- https://steamcommunity.com/sharedfiles/filedetails/?l=latam&id=2384333622
+url_wallpaper = "/home/wizord/Imágenes/sith2.jpg"
 -- {{{ Manejo de errores
 -- Compruebe si Awesome encontró un error durante el inicio y volvió a
 -- otra configuración (Este código solo se ejecutará para la configuración alternativa)
@@ -349,7 +350,7 @@ end)
 -- }}}
 -- aplicaciones de ejecucion al inicio del entorno
 --awful.util.spawn("picom")--tranparencia
---awful.util.spawn("radiotray")
+awful.util.spawn("radiotray")
 awful.util.spawn("caffeine")
 --awful.spawn.with_shell("/usr/lib/polkit-kde-authentication-agent-1 &")--lanzador de ventana para permisos
 --color del listado aplicaciones de segundo plano
