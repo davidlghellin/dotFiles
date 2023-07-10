@@ -349,7 +349,7 @@ client.connect_signal("unfocus", function(c)
 end)
 -- }}}
 -- aplicaciones de ejecucion al inicio del entorno
---awful.util.spawn("picom")--tranparencia
+awful.util.spawn("picom")--tranparencia
 awful.util.spawn("radiotray")
 awful.util.spawn("caffeine")
 --awful.spawn.with_shell("/usr/lib/polkit-kde-authentication-agent-1 &")--lanzador de ventana para permisos

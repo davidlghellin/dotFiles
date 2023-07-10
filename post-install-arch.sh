@@ -30,7 +30,7 @@ sudo usermod -aG docker $USER
 sudo systemctl start docker.service
 sudo systemctl enable docker.service
 
-sudo pacman -S transmission-gtk htop bat exa ripgrep notify-osd
+sudo pacman -S transmission-gtk htop bat exa ripgrep notify-osd picom
 sudo pacman -S xorg-xrandr arandr # para posición del monitor
 sudo pacman -S ranger cmus tig yt-dlp neovim scrot
 
