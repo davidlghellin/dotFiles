@@ -102,4 +102,6 @@ alias cat="bat -pp "
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+PROMPT='%{$fg[yellow]%}[%*] '$PROMPT
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

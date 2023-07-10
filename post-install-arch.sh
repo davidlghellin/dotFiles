@@ -46,6 +46,8 @@ git clone https://github.com/streetturtle/awesome-wm-widgets.git ~/.config/aweso
 
 https://github.com/horst3180/arc-icon-theme#installation
 
+# touchpad -> copiar el sudo cp /usr/share/X11/xorg.conf.d/70-synaptics.conf /etc/X11/xorg.conf.d/70-synaptics.conf
+# añadir la conf que dicen en la wiki de arch https://wiki.archlinux.org/title/Touchpad_Synaptics#Frequently_used_options
 
 # personal
 ssh-keygen -b 4096
