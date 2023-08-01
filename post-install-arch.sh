@@ -21,7 +21,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
-yay -S radiotray
+yay -S radiotray streamripper # streamripper http://1a-dance.radionetz.de/1a-dance.mp3 -d ~/Grabaciones
 yay -S brave-bin visual-studio-code-bin #para usar el devcontainer
 yay -S caffeine-ng
 
