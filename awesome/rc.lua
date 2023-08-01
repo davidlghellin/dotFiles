@@ -115,12 +115,14 @@ internet = {
 
 mymainmenu = awful.menu({
     items = {
-        {"awesome", myawesomemenu, beautiful.awesome_icon},
-        {"open terminal", terminal},
-        {"internet", internet},
-        {"Carpetas", "nautilus"},
-        {"Brave", "brave"},
-        {"VisualCode", "code"}
+        {"awesome",    myawesomemenu, beautiful.awesome_icon},
+        {"terminator", terminal},
+        {"internet",   internet},
+        {"Carpetas",   "nautilus"},
+        {"Brave",      "brave"},
+        {"VisualCode", "code"},
+        {"vlc",        "vlc"},
+        {"minitube",   "minitube"}
     }
 })
 mylauncher = awful.widget.launcher({
@@ -271,7 +273,7 @@ awful.rules.rules = { --- Todos los clientes coincidirán con esta regla.
         type = {"normal", "dialog"}
     },
     properties = {
-        titlebars_enabled = true -- oculatar la barra de las ventanas
+        titlebars_enabled = false -- oculatar la barra de las ventanas
     }
 } -- Set Firefox to always map on the tag named "2" on screen 1.
 -- { rule = { class = "Firefox" },

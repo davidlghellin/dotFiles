@@ -23,21 +23,18 @@ function throw_bar(awful,set_wallpaper,tasklist_buttons,wibox,gears,color,taglis
         -- Fondo de pantalla
         set_wallpaper(s)
         -- Cada pantalla tiene su propia tabla de etiquetas.
-        awful.tag({"Principal", "Música", "3", "4"}, s, awful.layout.layouts[1])
+        awful.tag({"Principal", "Multimedia", "Internet", "Otros"}, s, awful.layout.layouts[1])
         -- Crear un cuadro de diálogo para cada pantalla
         s.mypromptbox = awful.widget.prompt()
         -- Cree un widget de cuadro de imagen que contendrá un icono que indica qué diseño estamos usando.
         -- Necesitamos un cuadro de diseño por pantalla.
         s.mylayoutbox = awful.widget.layoutbox(s)
-        s.mylayoutbox:buttons(gears.table.join(awful.button({}, 1, function()
-            awful.layout.inc(1)
-        end), awful.button({}, 3, function()
-            awful.layout.inc(-1)
-        end), awful.button({}, 4, function()
-            awful.layout.inc(1)
-        end), awful.button({}, 5, function()
-            awful.layout.inc(-1)
-        end)))
+        s.mylayoutbox:buttons(gears.table.join(
+            awful.button({}, 1, function() awful.layout.inc(1)  end), 
+            awful.button({}, 3, function() awful.layout.inc(-1) end),
+            awful.button({}, 4, function() awful.layout.inc(1)  end),
+            awful.button({}, 5, function() awful.layout.inc(-1) end)
+        ))
         -- Crear un widget de lista de etiquetas
         s.mytaglist = awful.widget.taglist {
             screen = s,
@@ -52,7 +49,7 @@ function throw_bar(awful,set_wallpaper,tasklist_buttons,wibox,gears,color,taglis
         }
         -- crear la barra de tareas / estados (https://awesomewm.org/apidoc/popups_and_bars/awful.wibar.html)
         s.mywibox = awful.wibar({
-            position = "top",
+            position = "top", --"left",
             screen = s
         })
         -- Add widgets to the wibox
@@ -68,6 +65,7 @@ function throw_bar(awful,set_wallpaper,tasklist_buttons,wibox,gears,color,taglis
             { -- Right widgets
                 layout = wibox.layout.fixed.horizontal,
                 mykeyboardlayout,
+                wibox.widget.systray(),
                 -- mis wigeds
                 ram_widget(),
                 cpu_widget(),
@@ -77,7 +75,8 @@ function throw_bar(awful,set_wallpaper,tasklist_buttons,wibox,gears,color,taglis
                 logout_menu_widget(),
                 wibox.widget.systray(),
                 mytextclock,
-                s.mylayoutbox
+                s.mylayoutbox,
+                logout_menu_widget()
             }
         }
     end)
