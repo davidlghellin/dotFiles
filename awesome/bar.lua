@@ -9,6 +9,7 @@ function throw_bar(awful,set_wallpaper,tasklist_buttons,wibox,gears,color,taglis
     local logout_menu_widget = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
     local fs_widget = require("awesome-wm-widgets.fs-widget.fs-widget")
     local net_speed_widget = require("awesome-wm-widgets.net-speed-widget.net-speed")
+    local docker_widget = require("awesome-wm-widgets.docker-widget.docker")
 
 
     awful.screen.connect_for_each_screen(function(s)
@@ -69,6 +70,7 @@ function throw_bar(awful,set_wallpaper,tasklist_buttons,wibox,gears,color,taglis
                 mykeyboardlayout,
                 wibox.widget.systray(),
                 -- mis wigeds
+                docker_widget(),
                 net_speed_widget(),
                 fs_widget(),
                 ram_widget(),
