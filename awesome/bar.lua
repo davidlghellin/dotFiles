@@ -7,6 +7,8 @@ function throw_bar(awful,set_wallpaper,tasklist_buttons,wibox,gears,color,taglis
     local ram_widget = require("awesome-wm-widgets.ram-widget.ram-widget")
     local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
     local logout_menu_widget = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
+    local fs_widget = require("awesome-wm-widgets.fs-widget.fs-widget")
+    local net_speed_widget = require("awesome-wm-widgets.net-speed-widget.net-speed")
 
 
     awful.screen.connect_for_each_screen(function(s)
@@ -67,13 +69,18 @@ function throw_bar(awful,set_wallpaper,tasklist_buttons,wibox,gears,color,taglis
                 mykeyboardlayout,
                 wibox.widget.systray(),
                 -- mis wigeds
+                net_speed_widget(),
+                fs_widget(),
                 ram_widget(),
-                cpu_widget(),
+                cpu_widget({
+                    width = 70,
+                    step_width = 2,
+                    step_spacing = 0,
+                    color = '#434c5e'
+                }),
                 battery_widget(),
                 brightness_widget(),
                 volume_widget(),
-                logout_menu_widget(),
-                wibox.widget.systray(),
                 mytextclock,
                 s.mylayoutbox,
                 logout_menu_widget()
