@@ -38,8 +38,11 @@ sudo pacman -S fd procs # programas rust, utiles
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
-
-
+# dar vida a batería
+yay -S auto-cpufreq
+sudo systemctl start auto-cpufreq
+sudo systemctl enable auto-cpufreq
+# sudo  auto-cpufreq --stats
 
 sudo pacman -S awesome
 mkdir -p ~/.config/awesome
