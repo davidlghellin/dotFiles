@@ -112,17 +112,22 @@ internet = {
     {"Brave", "brave"},
     {"Brave incognito", "brave --args --incognito"}
 }
+utilidades = {
+    {"Organizar monitores", "arandr"}
+}
 
 mymainmenu = awful.menu({
     items = {
         {"awesome",    myawesomemenu, beautiful.awesome_icon},
         {"terminator", terminal},
+        {"kitty",      "kitty"},
         {"internet",   internet},
         {"Carpetas",   "nautilus"},
         {"Brave",      "brave"},
         {"VisualCode", "code"},
         {"vlc",        "vlc"},
-        {"minitube",   "minitube"}
+        {"minitube",   "minitube"},
+	{"Utilidades", utilidades}
     }
 })
 mylauncher = awful.widget.launcher({

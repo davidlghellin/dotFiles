@@ -10,6 +10,7 @@ function throw_bar(awful,set_wallpaper,tasklist_buttons,wibox,gears,color,taglis
     local fs_widget = require("awesome-wm-widgets.fs-widget.fs-widget")
     local net_speed_widget = require("awesome-wm-widgets.net-speed-widget.net-speed")
     local docker_widget = require("awesome-wm-widgets.docker-widget.docker")
+    local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
 
 
     awful.screen.connect_for_each_screen(function(s)
@@ -79,8 +80,11 @@ function throw_bar(awful,set_wallpaper,tasklist_buttons,wibox,gears,color,taglis
                     step_width = 2,
                     step_spacing = 0,
                     color = '#434c5e'
+                }),        batteryarc_widget({
+                    show_current_level = true,
+                    arc_thickness = 1,
                 }),
-                battery_widget(),
+               -- battery_widget(),
                 brightness_widget(),
                 volume_widget(),
                 mytextclock,
