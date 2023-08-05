@@ -109,25 +109,31 @@ end}}
 --Listado de app del menu
 
 internet = {
-    {"Brave", "brave"},
-    {"Brave incognito", "brave --args --incognito"}
+    {"Brave",        "brave"},
+    {"Incognito",    "brave --args --incognito"},
+    {"Transmission", "transmission-gtk"}
+}
+multimedia = {
+    {"minitube", "minitube"},
+    {"vlc",      "vlc"},
+    {"cmus",     terminal .. " cmus"},
+    {"ranger",   terminal .. " ranger"}
 }
 utilidades = {
-    {"Organizar monitores", "arandr"}
+    {"Organizar monitores", "arandr"},
+    {"Carpetas",            "nautilus"},
+    {"terminator",          "terminator"}
 }
 
 mymainmenu = awful.menu({
     items = {
         {"awesome",    myawesomemenu, beautiful.awesome_icon},
-        {"terminator", terminal},
-        {"kitty",      "kitty"},
-        {"internet",   internet},
-        {"Carpetas",   "nautilus"},
         {"Brave",      "brave"},
         {"VisualCode", "code"},
-        {"vlc",        "vlc"},
-        {"minitube",   "minitube"},
-	{"Utilidades", utilidades}
+        {"kitty",      terminal},
+        {"internet",   internet},
+        {"Multimedia", multimedia},
+	    {"Utilidades", utilidades}
     }
 })
 mylauncher = awful.widget.launcher({

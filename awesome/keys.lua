@@ -75,7 +75,10 @@ end, {    description = "restore minimized",    group = "client"}),
 awful.key({ modkey  , "Shift" }, "p", function () awful.spawn(screenshot_cmd) end,
           {description = "take screenshot", group = "launcher"}),
 -- Menubar
-    awful.key({modkey}, "p", function()     menubar.show() end, {    description = "show the menubar",    group = "launcher"})
+    awful.key({modkey}, "p", function()     menubar.show() end, {    description = "show the menubar",    group = "launcher"}),
+-- Imprimir pantalla
+    awful.key({ 0,   }, "Print", function()     awful.spawn("scrot -s '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/Imágenes'", false) end, {    description = "screenshot",    group = "launcher"}),
+    awful.key({Ctrl  ,         }, "Print", function()     awful.spawn("scrot -u -s '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/Imágenes'", false) end, {    description = "screenshot",    group = "launcher"})
 )
 
 clientkeys = gears.table.join(awful.key({modkey}, "f", function(c)
