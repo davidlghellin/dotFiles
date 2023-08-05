@@ -11,7 +11,7 @@ function throw_bar(awful,set_wallpaper,tasklist_buttons,wibox,gears,color,taglis
     local net_speed_widget = require("awesome-wm-widgets.net-speed-widget.net-speed")
     local docker_widget = require("awesome-wm-widgets.docker-widget.docker")
     local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
-
+    local pacman_widget = require("awesome-wm-widgets.pacman-widget.pacman")
 
     awful.screen.connect_for_each_screen(function(s)
         -- widget personales(https://awesomewm.org/doc/api/classes/wibox.widget.textbox.html)
@@ -74,6 +74,7 @@ function throw_bar(awful,set_wallpaper,tasklist_buttons,wibox,gears,color,taglis
                 docker_widget(),
                 net_speed_widget(),
                 fs_widget(),
+                pacman_widget(),
                 ram_widget(),
                 cpu_widget({
                     width = 70,

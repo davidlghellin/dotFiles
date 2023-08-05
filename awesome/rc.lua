@@ -61,8 +61,8 @@ end
 -- Definir el fondo de pantalla por defecto.
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 -- variables globales
-terminal = "terminator"
-editor = os.getenv("EDITOR") or "nano"
+terminal = "kitty"
+editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
 
@@ -78,18 +78,18 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
 awful.layout.suit.tile,
-awful.layout.suit.floating, 
+awful.layout.suit.floating,
 awful.layout.suit.tile.left,
 awful.layout.suit.tile.bottom,
-awful.layout.suit.tile.top, 
+awful.layout.suit.tile.top,
 awful.layout.suit.fair,
 awful.layout.suit.fair.horizontal,
-awful.layout.suit.spiral, 
+awful.layout.suit.spiral,
 awful.layout.suit.spiral.dwindle,
-awful.layout.suit.max, 
-awful.layout.suit.max.fullscreen, 
+awful.layout.suit.max,
+awful.layout.suit.max.fullscreen,
 awful.layout.suit.magnifier,
-awful.layout.suit.corner.nw 
+awful.layout.suit.corner.nw
 -- awful.layout.suit.corner.ne,
 -- awful.layout.suit.corner.sw,
 -- awful.layout.suit.corner.se,
@@ -99,7 +99,7 @@ awful.layout.suit.corner.nw
 -- Crear un widget de inicio y un menú principal
 myawesomemenu = {
     {"hotkeys", function()
-    hotkeys_popup.show_help(nil, awful.screen.focused())end}, 
+    hotkeys_popup.show_help(nil, awful.screen.focused())end},
 {"manual", terminal .. " -e man awesome"},
 {"edit config", editor_cmd .. " " .. awesome.conffile},
 {"restart", awesome.restart},
@@ -186,12 +186,12 @@ end))
 -- Manjador de walllpaper
 local function set_wallpaper(s)
     -- Si encontro la imagen del fondo de pantalla
-    local f=io.open(url_wallpaper,"r") 
-    if f~=nil 
-    then 
-        io.close(f) 
+    local f=io.open(url_wallpaper,"r")
+    if f~=nil
+    then
+        io.close(f)
         gears.wallpaper.maximized(url_wallpaper, s, true)-- un archivo formato imagen
-    else 
+    else
         if beautiful.wallpaper then
             -- Fondo de pantalla
             local wallpaper = beautiful.wallpaper
@@ -269,7 +269,7 @@ awful.rules.rules = { --- Todos los clientes coincidirán con esta regla.
         }
     },
     properties = {
-        floating = true 
+        floating = true
     }
 },
 {
