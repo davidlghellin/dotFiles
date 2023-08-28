@@ -111,6 +111,8 @@ end}}
 internet = {
     {"Brave",        "brave"},
     {"Incognito",    "brave --args --incognito"},
+    {"telegram",     "telegram-desktop"},
+    {"firefox",      "firefox"},
     {"Transmission", "transmission-gtk"}
 }
 multimedia = {
@@ -122,7 +124,8 @@ multimedia = {
 utilidades = {
     {"Organizar monitores", "arandr"},
     {"Carpetas",            "nautilus"},
-    {"terminator",          "terminator"}
+    {"terminator",          "terminator"},
+    {"Word",                "/usr/bin/libreoffice --writer"}
 }
 
 mymainmenu = awful.menu({
