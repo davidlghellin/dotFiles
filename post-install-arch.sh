@@ -61,6 +61,7 @@ sudo pacman -S docker docker-compose
 sudo usermod -aG docker $USER	
 sudo systemctl start docker.service
 sudo systemctl enable docker.service
+yay -S docker-buildx
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
